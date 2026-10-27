@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">UV Bridge</string>
+    <string name="accessibility_service_description">UV Bridge automates copy-paste between ChatGPT and Termux when you tap the button.</string>
+</resources>
