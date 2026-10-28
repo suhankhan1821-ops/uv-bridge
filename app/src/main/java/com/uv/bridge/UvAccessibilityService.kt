@@ -104,11 +104,16 @@ class UvAccessibilityService : AccessibilityService() {
             return
         }
         val args = android.os.Bundle()
-        args.putCharSequence(
-            AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
-            (node.text?.toString() ?: "") + "\n"
+        val entered = node.performAction(
+            AccessibilityNodeInfo.ACTION_SET_TEXT,
+            args.apply {
+                putCharSequence(
+                    AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+                    (node.text?.toString() ?: "") + "\n"
+                )
+            }
         )
-        node.performAction(AccessibilityNodeInfo.ACTION_IME_ENTER)
+        Log.d(TAG, "Enter fallback set-text result: $entered")
         Log.d(TAG, "Pressed enter (best effort)")
     }
 

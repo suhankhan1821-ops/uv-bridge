@@ -1,0 +1,7 @@
+token.txt
+*.bak
+.gradle/
+build/
+app/build/
+local.properties
+*.apk
