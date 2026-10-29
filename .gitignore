@@ -5,3 +5,7 @@ build/
 app/build/
 local.properties
 *.apk
+
+# Local signing keys - never commit
+keystore/
+*.keystore
